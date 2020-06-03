@@ -1,13 +1,16 @@
 console.log('funzia')
-import * as actions from './actionTypes'
+import {bugAdded , bugRemoved} from './actions'
 import store from './store'
 
 const unsubscribe = store.subscribe(()=>{
     console.log('Store Changed!!!');
     
 })
-store.dispatch({type:actions.BUG_ADDED, payload:{description: 'bug1'}})
-store.dispatch({type: actions.BUG_REMOVED, payload:{description: 'bug2'}})
+console.log('0',store.getState());
+store.dispatch(bugAdded('Bug1'))
+console.log('1',store.getState());
+store.dispatch(bugAdded('Bug2'))
+console.log('2',store.getState());
 unsubscribe()
-store.dispatch({type: 'bugRemoved', payload:{id: 1}})
-console.log(store.getState());
+store.dispatch(bugRemoved(1))
+console.log('3',store.getState());
