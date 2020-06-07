@@ -1,5 +1,5 @@
 import {bugAdded , bugRemoved, bugResolved} from './actions'
-import store from './customStore'
+import store from './store'
 
 console.log(store.getState());
 
