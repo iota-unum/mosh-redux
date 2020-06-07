@@ -11,6 +11,7 @@ console.log(store.getState());
 })
 store.dispatch(bugAdded('Bug1'))
 store.dispatch(bugAdded('Bug2'))
-unsubscribe()
 store.dispatch(bugResolved(2))
 store.dispatch(bugRemoved(1))
+store.dispatch(bugAdded('Bug3'))
+unsubscribe()
