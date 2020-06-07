@@ -7,4 +7,8 @@ const store = createStore(
  devToolsEnhancer({trace: true})
 )
 
-export default store
+const configureStore = () => {
+  return store
+}
+
+export default configureStore
